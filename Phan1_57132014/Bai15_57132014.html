@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        div{
+            border: 1px solid black;
+            width:50%;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        </style>
+
+    <script language="javascript">
+        function KT_SNT(n) {
+            if (document.getElementById("Radio1").checked == true)
+                check = 1;
+            else
+                check = 2;
+            if (check = 1) {
+                var s = 0;
+                var a = document.getElementById("txtA").value;
+                for (var i = 1; i <= a; i++)
+                    s += i;
+                document.getElementById("txtB").value = s;
+            }
+            else
+            {
+                var a = document.getElementById("txtA").value;
+                var b = 0;
+                if (a > 1) {
+                    for (var n = 2; n < a; n++)
+                        if (a % n == 0)
+                            b = 1;
+                    if (b == 1)
+                        document.getElementById("txtB").value = a + " không phải số nguyên tố!";
+                    else
+                        document.getElementById("txtB").value = a + " là số nguyên tố!";
+                    }
+                }
+            }
+          
+
+    function reSet() {
+        document.getElementById("txtA").value = "";
+        document.getElementById("txtB").value = "";
+        document.getElementById("Radio1").checked = false;
+        document.getElementById("Radio2").checked = false;
+    }
+    </script>
+</head>
+<body>
+    <form action="" name="form" method="post">
+        <div>
+            <h2>
+                <p style="text-align:center">Thực Hiện Tính Toán Bằng Javacript</p>
+            </h2>
+            <p style="text-align:center">Nhập số nguyên n:<input type=" text " id="txtA" style="width:200px;"></p>
+            <p style="position:absolute;left:30%;top:18%">Yêu cầu: </p>
+            <br />
+            <p style="position:absolute;left:47%;top:17%">
+            <input id="Radio1" type="radio" name="abc" />Tính tổng<br />
+            <input id="Radio2" type="radio" name="abc" />Số nguyên tố</p>
+            <br />
+            <p style="text-align:center">
+                <input name="button1" type="button" onClick="tinh()" value="Thực hiện" style="width:80px;" />&emsp;
+                <input name="button2" type="button" onClick="reset()" value="Nhập lại" style="width:80px;" />
+            </p>
+            <p style="text-align:center">Kết quả <input type=" text " id=" txtB " style="width:200px;"></p>
+        </div>
+
+    </form>
+</body>
+</html>

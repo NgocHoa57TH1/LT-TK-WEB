@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>> Welcome to HTML </title>
+    <script language="javascript">
+	  function giaiPTB1(){
+	  	var a= document.getElementById("txtA").value;
+	  	var b= document.getElementById("txtB").value;
+		if(a==0)
+			if(b==0)
+				alert("Phương trình vô số nghiệm.");
+			else
+			alert("Phương trình vô nghiệm.");
+		else
+		{
+			var x=-b/a;
+			alert("Phương trình có nghiệm: "+x);
+		}
+	  }
+	  function reSet()
+	  {
+	  	document.getElementById("txtA").value="";
+	  	document.getElementById("txtB").value="";
+	  }
+    </script>
+
+</head>
+<body>
+    <form action="" method="post" name="form1">
+        <p>Nhập vào các tham số của phương trình bậc 1 (ax + b = 0):</p>
+        <p style="CanhLe">
+            <input type="text" id="txtA" style="width:100px;"> x +
+            <input type="text" id="txtB" style="width:100px;"> =0
+        </p>
+        <p>
+            <input name="button" type="button" onClick="giaiPTB1()" value="Giải" style="width:80px;" />
+            <input name="button" type="button" onClick="reSet()" value="Làm lại" style="width:80px;" />
+        </p>
+    </form>
+
+</body>
+</html>
